@@ -16,7 +16,7 @@
  * File			: Hello.java
  * Notes		:
  * History		: [NO][Programmer][Description]
- *				: [20240923141549][rkdcodbs77#navr.com][CREATE: Initial Release]
+ *				: [20240923141549][rkdcodbs77#navar.com][CREATE: Initial Release]
  */
 
 /**
