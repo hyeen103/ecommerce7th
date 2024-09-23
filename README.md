@@ -1,1 +1,1 @@
-# kr.co.himedia.sn.ecommerce7th.jupiter
+# kr.co.himedia.sn.ecommerce7th
