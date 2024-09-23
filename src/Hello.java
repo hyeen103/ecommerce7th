@@ -16,12 +16,12 @@
  * File			: Hello.java
  * Notes		:
  * History		: [NO][Programmer][Description]
- *				: [20240923141549][rkdcodbs77@navr.com][CREATE: Initial Release]
+ *				: [20240923141549][rkdcodbs77#navr.com][CREATE: Initial Release]
  */
 
 /**
  * @version 1.0.0
- * @author rkdcodbs77@navr.com
+ * @author rkdcodbs77#naver.com
  * 
  * @since 2024-09-23
  * <p>DESCRIPTION:</p>
