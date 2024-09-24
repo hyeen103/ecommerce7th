@@ -13,7 +13,7 @@
 - 유사서비스와의 차별점:
 	한 사이트에서 사랑하는 반려동물에게 필요한 정보 및 상품 등 모든 것을 제공하고 있음, 다양한 반려동물들에 대한 커뮤니티기능 및 건강정보 제공, 인근병원 예약기능
 - 배경:
-	https://www.mpmbc.co.kr/NewsArticle/1419128
+	https://www.mpmbc.co.kr/NewsArticle/1419128 <br>
 	https://www.ilyoseoul.co.kr/news/articleView.html?idxno=491423
 	
 ## 3. 프로젝트 관리
