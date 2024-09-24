@@ -15,7 +15,8 @@
 - 배경:
 	https://www.mpmbc.co.kr/NewsArticle/1419128
 	https://www.ilyoseoul.co.kr/news/articleView.html?idxno=491423
-##3. 프로젝트 관리
+	
+## 3. 프로젝트 관리
 - 의견제시, 공유 및 취합 방법 선정:
 	오픈채팅, 대면회의 그리고 노션을 사용한 업무 공유 진행
 - 리스크 발생 시 의사 결정 방법 선정:
