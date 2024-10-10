@@ -10,26 +10,33 @@
  * Copyright (C) 2024 HAPPYSTEPS.COM All Rights Reserved.
  *
  *
- * Program		: kr.co.himedia.ecommerce
+ * Program		: com.happySteps
  * Description	:
  * Environment	: JRE 1.7 or more
- * File			: Hello.java
+ * File			: StatisticMemberDao.java
  * Notes		:
  * History		: [NO][Programmer][Description]
- *				: [20240923141549][rkdcodbs77#navar.com][CREATE: Initial Release]
+ *				: [20240813155802][kbs@happySteps.com][CREATE: Initial Release]
  */
+package com.happySteps.front.member.dao;
+
+import org.springframework.stereotype.Repository;
+
+import com.happySteps.front.common.dao.BaseDao;
+import com.happySteps.front.member.dto.StatisticMemberDto;
 
 /**
  * @version 1.0.0
- * @author rkdcodbs77#naver.com
+ * @author kbs@happySteps.com
  * 
- * @since 2024-09-23
+ * @since 2024-08-13
  * <p>DESCRIPTION:</p>
  * <p>IMPORTANT:</p>
  */
-public class Hello {
-
-	public static void main(String[]args) {
-		System.out.println("Hello World!");
+@Repository("com.happySteps.front.member.dao.StatisticMemberDao")
+public class StatisticMemberDao extends BaseDao {
+	
+	public int insert(StatisticMemberDto statisticMemberDto) {
+		return sqlSessionFront.insert("com.happySteps.front.mybatis.member.StatisticMember.insert", statisticMemberDto); 
 	}
 }

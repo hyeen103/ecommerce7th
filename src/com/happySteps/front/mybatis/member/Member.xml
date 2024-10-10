@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.happySteps.front.mybatis.member.Member">
+
+<!--	<update id="updateState" parameterType="memberDto">
+		UPDATE
+			TB_MBR_MST
+		SET
+			CD_STATE = 1
+		WHERE
+			CD_STATE	= 0
+			AND EMAIL	= #{email}
+			<![CDATA[
+			AND DT_REG >= SYSDATE - INTERVAL '10' MINUTE
+			]]> 
+	</update>-->
+	
+	<select id="selectIdDuplicate" parameterType="memberDto" resultType="java.lang.Integer">
+		SELECT
+			COUNT(ID)
+		FROM
+			TB_MBR_MST
+		WHERE
+			ID = #{id}
+	</select>
+	
+	<select id="selectNickDuplicate" parameterType="memberDto" resultType="java.lang.Integer">
+		SELECT
+			COUNT(NICKNAME)
+		FROM
+			TB_MBR_MST
+		WHERE
+			NICKNAME = #{nickname}
+	</select>
+	
+	<select id="selectPasswd" parameterType="memberDto" resultType="memberDto">
+		SELECT
+			PASSWD
+		FROM
+			TB_MBR_MST
+		WHERE
+			SEQ_MBR = #{seq_mbr}
+	</select>
+	
+<!--	<update id="updatePasswd" parameterType="memberDto">
+		UPDATE
+			TB_MBR_MST
+		SET
+			PASSWD		= #{passwd}
+			, UPDATER	= #{updater}
+			, DT_UPT	= SYSDATE
+		WHERE
+			SEQ_MBR		= #{seq_mbr}
+	</update>
+	
+	<update id="updateMaster" parameterType="memberDto">
+		UPDATE
+			TB_MBR_MST
+		SET
+			DT_UPT	= SYSDATE
+			<if test="phone != null and phone != ''">
+			, PHONE	= #{phone}
+			</if>
+			, UPDATER = #{updater}
+		WHERE
+			SEQ_MBR	= #{seq_mbr}
+	</update>
+	
+	<update id="updateDetail" parameterType="memberDto">
+		UPDATE
+			TB_MBR_DTL
+		SET
+			DT_UPT		= SYSDATE
+			, UPDATER	= #{updater}
+			<if test="post != null and post != ''">
+			, POST		= #{post}
+			</if>
+			<if test="addr1 != null and addr1 != ''">
+			, ADDR1		= #{addr1}
+			</if>
+			<if test="addr2 != null and addr2 != ''">
+			, ADDR2		= #{addr2}
+			</if>
+			<if test="pets != null and pets != ''">
+			, PETS	= #{pets}
+			</if>
+			<if test="flg_sms != null and flg_sms != ''">
+			, FLG_SMS	= #{flg_sms}
+			, DT_SMS	= SYSDATE
+			</if>
+			<if test="flg_email != null and flg_email != ''">
+			, FLG_EMAIL	= #{flg_email}
+			, DT_EMAIL	= SYSDATE
+			</if>
+		WHERE
+			SEQ_MBR		= #{seq_mbr}
+	</update>
+	
+	<select id="select" parameterType="memberDto" resultType="memberDto">
+		SELECT
+			mst.SEQ_MBR
+			, mst.EMAIL
+			, mst.MBR_NM
+			, mst.GENDER
+			, mst.PHONE
+			, dtl.POST
+			, dtl.ADDR1
+			, dtl.ADDR2
+			, dtl.PETS
+			, dtl.INTRO
+			, dtl.FLG_EMAIL
+			, dtl.FLG_SMS
+		FROM
+			TB_MBR_MST mst
+		INNER JOIN
+			TB_MBR_DTL dtl
+		ON
+			mst.SEQ_MBR = dtl.SEQ_MBR
+		WHERE
+			mst.SEQ_MBR = #{seq_mbr}
+	</select>-->
+	
+	<insert id="insertMaster" parameterType="memberDto">
+		INSERT INTO TB_MBR_MST
+			(SEQ_MBR, ID, PASSWD, NICKNAME, CD_STATE, FLG_PETS, PETS, EMAIL, MBR_NM, GENDER, PHONE, DT_REG, REGISTER)
+		VALUES
+			(#{seq_mbr}, #{id}, #{passwd}, #{nickname}, 0, #{flg_pets}, #{pets}, #{email}, #{mbr_nm}, #{gender}, #{phone}, SYSDATE, #{register})
+	</insert>
+	
+	<insert id="insertDetail" parameterType="memberDto">
+		INSERT INTO TB_MBR_DTL
+			(SEQ_MBR, POST, ADDR1, ADDR2, FLG_SMS, DT_SMS, FLG_EMAIL, DT_EMAIL)
+		VALUES
+			(#{seq_mbr}, #{post}, #{addr1}, #{addr2}, #{flg_sms}, SYSDATE, #{flg_email}, SYSDATE)
+	</insert>
+	
+	<select id="sequence" resultType="java.lang.Integer">
+		SELECT SQ_SEQ_MBR.NEXTVAL FROM DUAL
+	</select>
+	
+</mapper>

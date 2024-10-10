@@ -13,23 +13,34 @@
  * Program		: kr.co.himedia.ecommerce
  * Description	:
  * Environment	: JRE 1.7 or more
- * File			: Hello.java
+ * File			: TermAgreeDao.java
  * Notes		:
  * History		: [NO][Programmer][Description]
- *				: [20240923141549][rkdcodbs77#navar.com][CREATE: Initial Release]
+ *				: [20240807163239][pluto@HAPPYSTEPS.COM][CREATE: Initial Release]
  */
+package com.happySteps.front.member.dao;
+
+import org.springframework.stereotype.Repository;
+
+import com.happySteps.front.common.dao.BaseDao;
+import com.happySteps.front.member.dto.TermAgreeDto;
 
 /**
  * @version 1.0.0
- * @author rkdcodbs77#naver.com
+ * @author pluto@HAPPYSTEPS.COM
  * 
- * @since 2024-09-23
+ * @since 2024-08-07
  * <p>DESCRIPTION:</p>
  * <p>IMPORTANT:</p>
  */
-public class Hello {
-
-	public static void main(String[]args) {
-		System.out.println("Hello World!");
+@Repository("com.happySteps.front.member.dao.TermAgreeDao")
+public class TermAgreeDao extends BaseDao {
+	
+	public int sequence() {
+		return sqlSessionFront.selectOne("com.happySteps.front.mybatis.member.TermAgree.sequence");
+	}
+	
+	public int insert(TermAgreeDto termAgreeDto) {
+		return sqlSessionFront.insert("com.happySteps.front.mybatis.member.TermAgree.insert", termAgreeDto);
 	}
 }

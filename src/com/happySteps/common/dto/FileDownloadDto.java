@@ -13,23 +13,44 @@
  * Program		: kr.co.himedia.ecommerce
  * Description	:
  * Environment	: JRE 1.7 or more
- * File			: Hello.java
+ * File			: FileDownloadDto.java
  * Notes		:
  * History		: [NO][Programmer][Description]
- *				: [20240923141549][rkdcodbs77#navar.com][CREATE: Initial Release]
+ *				: [20240808144721][pluto@HAPPYSTEPS.COM][CREATE: Initial Release]
  */
+package com.happySteps.common.dto;
 
 /**
  * @version 1.0.0
- * @author rkdcodbs77#naver.com
+ * @author pluto@HAPPYSTEPS.COM
  * 
- * @since 2024-09-23
+ * @since 2024-08-08
  * <p>DESCRIPTION:</p>
  * <p>IMPORTANT:</p>
  */
-public class Hello {
-
-	public static void main(String[]args) {
-		System.out.println("Hello World!");
+public class FileDownloadDto {
+	
+	private String file_original	= "";
+	private String file_save		= "";
+	private long file_size			= 0;
+	
+	
+	public String getFile_original() {
+		return file_original;
+	}
+	public void setFile_original(String file_original) {
+		this.file_original = file_original;
+	}
+	public String getFile_save() {
+		return file_save;
+	}
+	public void setFile_save(String file_save) {
+		this.file_save = file_save;
+	}
+	public long getFile_size() {
+		return file_size;
+	}
+	public void setFile_size(long file_size) {
+		this.file_size = file_size;
 	}
 }

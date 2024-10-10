@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.happySteps.front.mybatis.member.TermAgree">
+	
+	<insert id="insert" parameterType="termAgreeDto">
+		INSERT INTO TB_TRM_AGR
+			(SEQ_TRM_AGR, SEQ_MBR, SEQ_TRM, FLG_AGR, DT_REG, REGISTER)
+		VALUES
+			(#{seq_trm_agr}, #{seq_mbr}, #{seq_trm}, #{flg_agr}, SYSDATE, #{seq_mbr})
+	</insert>
+	
+	<select id="sequence" resultType="java.lang.Integer">
+		SELECT SQ_SEQ_TRM_AGR.NEXTVAL FROM DUAL
+	</select>
+	
+</mapper>

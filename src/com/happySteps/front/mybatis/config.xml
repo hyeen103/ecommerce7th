@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="jdbcTypeForNull" value="NULL" />
+	</settings>
+	<typeAliases>
+	<typeAlias type="com.happySteps.front.login.dto.LoginDto"				alias="loginDto" />
+	<typeAlias type="com.happySteps.front.member.dto.MemberDto"				alias="memberDto" />
+	<typeAlias type="com.happySteps.front.sale.dto.SaleDto"					alias="saleDto" />
+	<typeAlias type="com.happySteps.front.common.dto.PagingDto"				alias="pagingDto" />
+	</typeAliases>
+	<mappers>
+		<mapper resource="com/happySteps/front/mybatis/login/Login.xml" />
+		<mapper resource="com/happySteps/front/mybatis/member/Member.xml" />
+		<mapper resource="com/happySteps/front/mybatis/sale/Sale.xml" />
+	</mappers>
+</configuration>

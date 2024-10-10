@@ -13,23 +13,37 @@
  * Program		: kr.co.himedia.ecommerce
  * Description	:
  * Environment	: JRE 1.7 or more
- * File			: Hello.java
+ * File			: StatisticMemberDto.java
  * Notes		:
  * History		: [NO][Programmer][Description]
- *				: [20240923141549][rkdcodbs77#navar.com][CREATE: Initial Release]
+ *				: [20240813155732][pluto@HAPPYSTEPS.COM][CREATE: Initial Release]
  */
+package com.happySteps.front.member.dto;
 
 /**
  * @version 1.0.0
- * @author rkdcodbs77#naver.com
+ * @author pluto@HAPPYSTEPS.COM
  * 
- * @since 2024-09-23
+ * @since 2024-08-13
  * <p>DESCRIPTION:</p>
  * <p>IMPORTANT:</p>
  */
-public class Hello {
-
-	public static void main(String[]args) {
-		System.out.println("Hello World!");
+public class StatisticMemberDto {
+	
+	private int seq_mbr		= 0;
+	private String post		= "";
+	
+	
+	public int getSeq_mbr() {
+		return seq_mbr;
+	}
+	public void setSeq_mbr(int seq_mbr) {
+		this.seq_mbr = seq_mbr;
+	}
+	public String getPost() {
+		return post;
+	}
+	public void setPost(String post) {
+		this.post = post;
 	}
 }

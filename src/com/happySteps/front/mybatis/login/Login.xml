@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.happySteps.front.mybatis.login.Login">
+	
+	<select id="exist" parameterType="loginDto" resultType="memberDto">
+		SELECT
+			SEQ_MBR
+			, PASSWD
+			, MBR_NM
+			, ID
+		FROM
+			TB_MBR_MST
+		WHERE
+			ID			= #{id}
+			AND CD_STATE	= 1
+			AND ROWNUM		= 1
+	</select>
+	
+	<update id="updateLast" parameterType="memberDto">
+		UPDATE
+			TB_MBR_MST
+		SET
+			LAST_IP		= #{last_ip}
+			, LAST_DT	= SYSDATE
+		WHERE
+			SEQ_MBR		= #{seq_mbr}
+	</update>
+	
+</mapper>

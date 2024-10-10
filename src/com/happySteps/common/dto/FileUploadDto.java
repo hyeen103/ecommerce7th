@@ -13,23 +13,34 @@
  * Program		: kr.co.himedia.ecommerce
  * Description	:
  * Environment	: JRE 1.7 or more
- * File			: Hello.java
+ * File			: FileUploadDto.java
  * Notes		:
  * History		: [NO][Programmer][Description]
- *				: [20240923141549][rkdcodbs77#navar.com][CREATE: Initial Release]
+ *				: [20240808130217][pluto@HAPPYSTEPS.COM][CREATE: Initial Release]
  */
+package com.happySteps.common.dto;
+
+import java.util.List;
+
+import org.springframework.web.multipart.MultipartFile;
 
 /**
  * @version 1.0.0
- * @author rkdcodbs77#naver.com
+ * @author pluto@HAPPYSTEPS.COM
  * 
- * @since 2024-09-23
+ * @since 2024-08-08
  * <p>DESCRIPTION:</p>
  * <p>IMPORTANT:</p>
  */
-public class Hello {
-
-	public static void main(String[]args) {
-		System.out.println("Hello World!");
+public class FileUploadDto {
+	
+	private List<MultipartFile> files;
+	
+	
+	public List<MultipartFile> getFiles() {
+		return files;
+	}
+	public void setFiles(List<MultipartFile> files) {
+		this.files = files;
 	}
 }

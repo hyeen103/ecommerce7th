@@ -13,23 +13,37 @@
  * Program		: kr.co.himedia.ecommerce
  * Description	:
  * Environment	: JRE 1.7 or more
- * File			: Hello.java
+ * File			: PagingListDto.java
  * Notes		:
  * History		: [NO][Programmer][Description]
- *				: [20240923141549][rkdcodbs77#navar.com][CREATE: Initial Release]
+ *				: [20240807120945][hyeen103@HAPPYSTEPS.COM][CREATE: Initial Release]
  */
+package com.happySteps.front.common.dto;
 
 /**
  * @version 1.0.0
- * @author rkdcodbs77#naver.com
+ * @author hyeen103@HAPPYSTEPS.COM
  * 
- * @since 2024-09-23
+ * @since 2024-08-07
  * <p>DESCRIPTION:</p>
  * <p>IMPORTANT:</p>
  */
-public class Hello {
-
-	public static void main(String[]args) {
-		System.out.println("Hello World!");
+public class PagingListDto {
+	
+	private PagingDto paging	= null;
+	private Object list			= null;
+	
+	
+	public PagingDto getPaging() {
+		return paging;
+	}
+	public void setPaging(PagingDto paging) {
+		this.paging = paging;
+	}
+	public Object getList() {
+		return list;
+	}
+	public void setList(Object list) {
+		this.list = list;
 	}
 }
